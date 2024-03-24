@@ -11,6 +11,7 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
+  profile = "terraform_profile"
 }
 
 # Create a VPC
@@ -109,7 +110,7 @@ resource "aws_db_instance" "db_instance" {
   identifier              = "dev-rds-instance"
   username                = "admin"
   password                = "Admin123"
-  instance_class          = "db.t2.micro"
+  instance_class          = "db.t3.micro"
   allocated_storage       = 200
   db_subnet_group_name    = aws_db_subnet_group.database_subnet_group.name
   vpc_security_group_ids  = [aws_security_group.rds_db_sg.id]
