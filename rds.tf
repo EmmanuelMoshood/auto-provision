@@ -98,7 +98,9 @@ resource "aws_route_table_association" "public-subnet-2-association" {
 
 #NAT gateway to enable connectivity to the private subnet
 resource "aws_eip" "nat-eip" {
-  vpc = true
+  # vpc = true
+  domain = "vpc"
+  
   tags = {
     Name = "nat-eip"
   }
