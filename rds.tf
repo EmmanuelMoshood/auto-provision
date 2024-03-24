@@ -100,7 +100,6 @@ resource "aws_route_table_association" "public-subnet-2-association" {
 resource "aws_eip" "nat-eip" {
   # vpc = true
   domain = "vpc"
-  git 
   tags = {
     Name = "nat-eip"
   }
