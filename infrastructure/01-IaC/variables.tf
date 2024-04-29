@@ -31,19 +31,19 @@ variable "public_subnets" {
 
 
 variable "variables_sub_cidr" {
-  default = "10.0.202.0/24"
+  default     = "10.0.202.0/24"
   description = "CIDR Block for the Variables Subnet"
   type        = string
 }
 
 variable "variables_sub_az" {
-  default = "us-east-1a"
+  default     = "us-east-1a"
   description = "Availability Zone used Variables Subnet"
   type        = string
 }
 
 variable "variables_sub_auto_ip" {
-  default = true
+  default     = true
   description = "Set Automatic IP Assigment for Variables Subnet"
   type        = bool
 }
