@@ -47,6 +47,12 @@ kubectl get nodes
 
 If using EC2 and getting the "You must be logged in to the server (Unauthorized)" error, refer this: https://repost.aws/knowledge-center/eks-api-server-unauthorized-error
 
+	- use the aws credential used to create the cluster to edit the configmap aws-auth
+
+	`aws eks update-kubeconfig --name play103-cluster --region us-east-1`
+
+	- then add 
+
 Clone the github repo
 ```
 git clone https://github.com/N4si/K8s-voting-app.git
@@ -58,7 +64,15 @@ kubectl create ns cloudchamp
 
 kubectl config set-context --current --namespace cloudchamp
 ```
+to check, run
+```
+kubectl get pods -n cloudchamp -w
+```
 
+to make our namespace the default
+```
+kubectl config set-context --current --namespace cloudchamp
+```
 **MONGO Database Setup**
 
 
