@@ -10,7 +10,7 @@ output "vpc_id" {
 
 output "public_url" {
   description = "Public URL for our Web Server"
-  value       = "https://${aws_instance.web_server.public_ip}:8080/index.html"
+  value       = "https://${aws_instance.web_server.public_ip}:80/index.html"
 }
 
 /*
